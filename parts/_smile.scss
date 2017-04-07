@@ -1,0 +1,260 @@
+.smile { // for main
+  padding: 0;
+  @include MQ(M) {
+    br {
+      display: none;
+    }
+  }
+
+  .header-text {
+    display: block;
+    margin: 0 auto;
+    padding-top: 70px;
+    @include MQ(M) {
+      padding-top: 90px;
+    }
+    h1 {
+      font-size: 110px;
+      color: $color-2;
+      z-index: 5;
+      line-height: 80px;
+      position: relative;
+      margin-bottom: 0;
+      @include MQ(M) {
+        font-size: 120px;
+      }
+      @include MQ(LS) {
+        font-size: 120px;
+      }
+      @include MQ(L) {
+        font-size: 150px;
+      }
+      &.swatch {
+        font-family: $swatch;
+        font-size: 320px;
+        position: relative;
+        color: $color-3;
+        line-height: 150px;
+        top: -30px;
+        left: -10px;
+        z-index: 0;
+        @include MQ(M) {
+          font-size: 460px;
+          top: -25px;
+          left: -5px;
+        }
+        @include MQ(LS) {
+          font-size: 470px;
+          top: -25px;
+          left: -5px;
+        }
+        @include MQ(L) {
+          font-size: 480px;
+          top: -20px;
+        }
+      }
+      &.top-text {
+        font-family: $primary-font-bold;
+        font-size: 30px;
+        color: $color-4;
+        position: relative;
+        top: 34px;
+        left: 10px;
+        z-index: 0;
+        @include MQ(M) {
+          font-size: 45px;
+          top: 50px;
+          left: 20px;
+        }
+      }
+    }
+  }
+
+
+// fix for really small phones
+  @media only screen and (max-width: 350px) {
+    h1 {
+      font-size: 70px;
+      &.swatch {
+        font-size: 200px;
+        left: -60px;
+        top: -40px;
+      }
+    }
+  }
+
+
+.intro-container {
+  padding: 25px;
+  h4 {
+    font-size: 25px;
+    line-height: 1.3;
+    color: darken($color-2, 30%);
+    @include MQ(LS) {
+      font-size: 35px;
+    }
+    a {
+      color: darken($color-2, 30%);
+      transition: all $animation-duration-light ease-out;
+      &:hover {
+        color: $color-2;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        width: 130px;
+        height: 1px;
+        background: $color-4;
+        margin-top: 30px;
+        margin-left: -135px;
+        @include MQ(LS) {
+          width: 180px;
+          margin-top: 42px;
+          margin-left: -185px;
+        }
+      }
+    }
+  }
+  @include MQ(M) {
+    padding: 0 35px;
+    margin-top: 25px;
+  }
+  @include MQ(LS) {
+    max-width: 870px;
+    margin: 65px auto;
+    padding: 0 35px;
+  }
+} // end intro-container
+
+.big-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+  h5 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: $secondary-font;
+    text-align: center;
+    width: 100%;
+    margin: 25px auto;
+  }
+  img {
+    width: 100%;
+  }
+  @include MQ(M) {
+    padding: 0 40px;
+  }
+  @include MQ(L) {
+    max-width: 1170px;
+
+  }
+  h1 {
+    font-size: 120px;
+    line-height: 80px;
+    margin: 25px 0 55px 0;
+    text-align: left;
+    @include MQ(M) {
+      text-align: left;
+    }
+    @include MQ(L) {
+      font-size: 150px;
+    }
+  }
+  p {
+    font-size: 20px;
+    text-align: left;
+    line-height: 1.3;
+    margin-bottom: 30px;
+    @include MQ(M) {
+      max-width: 500px;
+      margin: 0;
+      margin-bottom: 45px;
+    }
+    @include MQ(L) {
+      max-width: 650px;
+      font-size: 22px;
+      margin-top: 65px;
+    }
+  }
+  .inpiration-content {
+    .sub-title {
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      font-size: 16px;
+      letter-spacing: 2px;
+      @include MQ(L) {
+        font-size: 18px;
+      }
+      & .seperator {
+        display: block;
+        height: 1px;
+        width: 40px;
+        margin: 10px 0;
+        background: $color-4;
+      }
+    }
+    h4 {
+      font-size: 25px;
+      color: lighten($color-1, 60%);
+      margin: 15px 0;
+      line-height: 1.3;
+      transition: color $animation-duration-light ease-in-out;
+      &:hover {
+        color: $color-2;
+      }
+      @include MQ(L) {
+        font-size: 35px;
+      }
+    }
+    .work-box {
+      margin: 45px 0;
+      margin-top: 85px;
+      max-width: 900px;
+    }
+    .not-work-box {
+      margin: 45px 0;
+      max-width: 900px;
+    }
+  }
+  #seperator {
+    transform: rotate(350deg) scaleX(-1);
+    margin-top: -55px;
+    h1 {
+      font-family: $swatch;
+      font-size: 500px;
+      line-height: 100px;
+      text-align: left;
+      color: $color-4;
+      @include MQ(LS){
+        font-size: 625px;
+      }
+    }
+    @include MQ(M) {
+      margin-top: inherit;
+      max-width: 330px;
+      margin-top: -35px;
+    }
+    @include MQ(LS) {
+      margin-top: inherit;
+      max-width: 410px;
+      margin-top: -25px;
+    }
+  }
+} // end inspiration-container
+
+#never {
+  h4 {
+    &:hover {
+      color: lighten($color-1, 60%);
+    }
+  }
+}
+
+.footer {
+  @include MQ(M) {
+    margin-top: 45px;
+  }
+}
+
+} // end aboutpage

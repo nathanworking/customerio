@@ -1,0 +1,444 @@
+main {
+  	.navigation-is-open & {
+  		@include transform(translateX(-100%));
+  	}
+}
+
+.cd-nav-trigger {
+  position: fixed;
+  z-index: 3;
+  right: 5%;
+  top: 20px;
+	height: 54px;
+	width: 54px;
+
+	/* image replacement */
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+
+	@include transition(transform $animation-duration - 0.2s);
+
+  @include MQ(L) {
+    position: fixed;
+  	z-index: 3;
+  	right: 5%;
+  	top: 20px;
+  }
+
+	.cd-nav-icon {
+		/* icon created in CSS */
+		position: absolute;
+    top: 50%;
+    left: 50%;
+		@include center; // mixin inside partials > _mixins.scss
+		width: 22px;
+		height: 1px;
+		background-color: $color-2;
+
+
+		&::before, &:after {
+			/* upper and lower lines of the menu icon */
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: inherit;
+
+			/* Force Hardware Acceleration in WebKit */
+			@include transform(translateZ(0));
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			@include transition(transform $animation-duration - 0.2s, width $animation-duration - 0.2s, top .3s);
+		}
+
+		&::before {
+			@include transform-origin(left top);
+			@include transform(translateY(6px));
+		}
+
+		&::after {
+			@include transform-origin(left bottom);
+			@include transform(translateY(-6px));
+		}
+
+	}
+
+	.no-touch &:hover .cd-nav-icon::after {
+		top: -2px;
+	}
+
+	.no-touch &:hover .cd-nav-icon::before {
+		top: 2px;
+	}
+
+	svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	// circle {
+	// 	/* circle border animation */
+	// 	@include transition(stroke-dashoffset $animation-duration - 0.3s 0s);
+	// }
+
+	.navigation-is-open & {
+		/* rotate trigger when navigation becomes visible */
+		@include transform(rotate(180deg));
+
+		.cd-nav-icon::after,
+		.cd-nav-icon::before {
+			/* animate arrow --> from hamburger to arrow */
+			width: 50%;
+			@include transition(transform $animation-duration - 0.2s, width $animation-duration - 0.2s);
+		}
+
+		.cd-nav-icon::before {
+			@include transform(rotate(-45deg));
+		}
+
+		.cd-nav-icon::after {
+			@include transform(rotate(45deg));
+		}
+
+		.no-touch &:hover .cd-nav-icon::after,
+		.no-touch &:hover .cd-nav-icon::before {
+			top: 0;
+		}
+
+		// circle {
+		// 	stroke-dashoffset: 0;
+		// 	@include transition(stroke-dashoffset $animation-duration - 0.3s 0.3s);
+		// }
+	}
+
+	@include MQ(L) {
+		top: 40px;
+	}
+}
+
+.follow-nav {
+  display: none;
+    @include MQ(L) {
+      display: block;
+    }
+}
+.navigation-is-open .cd-nav-trigger.follow-nav {
+  display: block;
+}
+
+.cd-nav {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $color-1;
+	visibility: hidden;
+	@include transition(visibility 0s $animation-duration);
+
+	.cd-navigation-wrapper {
+		/* all navigation content */
+		height: 100%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding: 40px 1% 40px calc(1% + 40px);
+
+		/* Force Hardware Acceleration in WebKit */
+		@include transform(translateZ(0));
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+
+		@include transform(translateX(50%));
+		@include transition(transform $animation-duration);
+		@include transition-timing-function(cubic-bezier(.86,.01,.77,.78));
+	}
+
+	.navigation-is-open & {
+		visibility: visible;
+		@include transition(visibility 0s 0s);
+
+		.cd-navigation-wrapper {
+			@include transform(translateX(0));
+			@include transition(transform $animation-duration - 0.2s);
+			@include transition-timing-function(cubic-bezier(.82,.01,.77,.78));
+		}
+	}
+
+	h4 {
+		position: relative;
+		margin-bottom: 2.7em;
+		font-size: 1.8rem;
+    letter-spacing: 2px;
+		font-weight: 800;
+		color: $color-3;
+    font-family: $secondary-font;
+		text-transform: uppercase;
+
+		&::after {
+			/* bottom separation line */
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -15px;
+			height: 1px;
+			width: 60px;
+			background-color: $color-4;
+		}
+	}
+
+	.cd-primary-nav {
+		margin-top: 60px;
+
+		li {
+			margin: 1.6em 0;
+		}
+
+		a {
+			font-family: $primary-font-bold;
+			font-size: 3.6rem;
+			color: $color-2;
+      margin-left: -24px;
+			display: inline-block;
+      @include animation(cd-nav-x-back 0.3s);
+      animation-fill-mode: backwards;
+      svg {
+        opacity: 0;
+        @include animation(cd-nav-icon-x-back 0.3s);
+        animation-fill-mode: backwards;
+        margin-bottom: 5px;
+        max-width: 15px;
+      }
+
+			&.selected {
+        color: $color-3;
+			}
+
+      &:hover {
+        @include animation(cd-nav-x 0.5s);
+        animation-fill-mode: forwards;
+        svg {
+          opacity: 1;
+          @include animation(cd-nav-icon-x 0.5s);
+          animation-fill-mode: forwards;
+        }
+      }
+
+		}
+	}
+
+	.cd-contact-info {
+		margin-top: 80px;
+
+    h4 {
+      &:last-of-type {
+        margin-top: 3.5em;
+      }
+    }
+
+    a {
+      transition: color $animation-duration-light ease-in-out;
+      &:hover {
+        color: $color-3;
+      }
+    }
+
+    .photography-box {
+      a {
+        &:hover {
+          .nav-photos {
+            color: $color-3;
+          }
+        }
+      }
+    }
+
+    .nav-anderson {
+      font-family: $primary-font-bold;
+      color: $color-2;
+      font-size: 25px;
+    }
+
+    .nav-photos {
+      font-family: $script-font;
+      color: $color-2;
+      font-size: 80px;
+      margin-top: -20px;
+      transition: color $animation-duration-light ease-in-out;
+    }
+
+    .social-block {
+      a {
+        display: inline-block;
+        &:hover {
+          .social-icon {
+            fill: $color-3;
+          }
+        }
+      }
+      svg {
+        margin: 15px 5px 0 5px;
+      }
+      .social-icon {
+        fill: lighten($color-1, 50%);
+        transition: fill $animation-duration-light ease-in-out;
+      }
+    }
+
+
+		li {
+			font-family: $secondary-font;
+			margin-bottom: 1.5em;
+			line-height: 1.2;
+		}
+
+		a {
+			color: $color-3;
+		}
+
+		span {
+			display: block;
+		}
+
+		li, a, span {
+      color: lighten($color-1, 50%);
+      font-size: 2rem;
+      letter-spacing: 1.5px;
+		}
+    span {
+      margin-top: .5em;
+    }
+
+	}
+
+	@include MQ(L) {
+
+		.cd-navigation-wrapper {
+			padding: 62px 20%;
+			@include clearfix;
+		}
+
+		.cd-half-block {
+			@include column(.5); // see partials > _layout.scss
+		}
+
+		.cd-primary-nav {
+			margin-top: 0;
+		}
+
+		h4 {
+			font-size: 1.8rem;
+      letter-spacing: 3.2px;
+			margin-bottom: 3.6em;
+      &::after {
+        bottom: -20px;
+      }
+		}
+
+		.cd-primary-nav {
+
+			li {
+				margin: 0;
+			}
+
+			a {
+				font-size: 5.4rem;
+        margin-left: -30px;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+			}
+
+		}
+
+		.cd-contact-info {
+			text-align: right;
+      h4 {
+        margin-bottom: 2.8em;
+        &:last-of-type {
+          margin-top: 3.5em;
+        }
+        &::after {
+          right: 0;
+          left: initial;
+        }
+      }
+			li, a, span {
+        color: lighten($color-1, 50%);
+				font-size: 2rem;
+        letter-spacing: 1.5px;
+			}
+		}
+	}
+}
+
+
+.no-js main {
+	height: auto;
+	overflow: visible;
+}
+
+.no-js .cd-nav {
+	position: static;
+	visibility: visible;
+
+	.cd-navigation-wrapper {
+		height: auto;
+		overflow: visible;
+		padding: 100px 5%;
+		@include transform(translateX(0));
+	}
+}
+
+@include keyframes(cd-nav-x) {
+	0% {
+		opacity: 1;
+		@include transform(translateX(0));
+	}
+
+	100% {
+		@include transform(translateX(20px));
+		opacity: 1;
+	}
+}
+
+@include keyframes(cd-nav-x-back) {
+	0% {
+		opacity: 1;
+		@include transform(translateX(20px));
+	}
+
+	100% {
+		@include transform(translateX(0));
+		opacity: 1;
+	}
+}
+
+@include keyframes(cd-nav-icon-x) {
+	0% {
+		opacity: 0;
+		@include transform(translateX(0));
+    delay: .3s;
+	}
+
+	100% {
+		@include transform(translateX(5px));
+		opacity: 1;
+	}
+}
+
+@include keyframes(cd-nav-icon-x-back) {
+	0% {
+		opacity: 1;
+		@include transform(translateX(5px));
+	}
+
+	100% {
+		@include transform(translateX(0));
+		opacity: 0;
+	}
+}

@@ -1,0 +1,143 @@
+.swiper-slide {
+  @include MQ(LS) {
+    margin: 25px 0 45px 0;
+  }
+}
+
+.swiper-slide-bg {
+  background: $color-2;
+  border-radius: 2px;
+  box-shadow: 2px 5px 16px 0px rgba(0, 0, 0, 0.07), 0px -1px 14px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 45px;
+  @include MQ(LS) {
+    max-width: 900px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.swiper-button-next, .swiper-button-prev {
+  display: none;
+  @include MQ(L) {
+    display: block;
+  }
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  transition: all $animation-duration-light ease-in-out;
+  &:hover {
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.50);
+    background: $color-2;
+  }
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 0px;
+}
+
+.swiper-pagination-bullet-active {
+  color: $color-2;
+  background: $color-2;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.50);
+}
+
+.swiper-container {
+  overflow: hidden;
+  .swiper-wrapper {
+    .slider-title {
+      max-width: 200px;
+      margin: 0 auto;
+      display: block;
+      h1 {
+        font-size: 32px;
+        padding-top: 25px;
+        font-family: $primary-font-bold;
+        color: $color-1;
+        text-align: center;
+        width: 100%;
+        @include MQ(M) {
+          font-size: 42px;
+        }
+      }
+      span {
+        font-family: $swatch;
+        position: relative;
+        left: 40px;
+        font-size: 200px;
+        line-height: 10px;
+        @include MQ(M) {
+          font-size: 300px;
+          left: 0px;
+        }
+      }
+    } // end slider title
+    .slider-content {
+      padding: 20px;
+      @include MQ(LS) {
+        max-width: 900px;
+        display: block;
+        margin: 0 auto;
+        padding: 0 20px 40px;
+        max-width: 888px;
+      }
+      img {
+        max-width: 100%;
+        @include MQ(M) {
+          float: left;
+          max-width: 250px;
+        }
+        @include MQ(LS) {
+          float: left;
+          max-width: 100%;
+        }
+      }
+      h2 {
+        margin: 15px 0;
+        font-family: $primary-font-bold;
+        @include MQ(M) {
+          display: inline-block;
+          margin-top: -5px;
+        }
+      }
+      p {
+        color: lighten($color-1, 10%);
+        text-align: left;
+        @include MQ(M) {
+          display: block;
+          margin: 0;
+          float: right;
+        }
+      }
+      .btn-texture {
+        @include MQ(M) {
+          margin: 0;
+          position: relative;
+          left: 120px;
+          bottom: 10px;
+        }
+        @include MQ(LS) {
+          left: 25px;
+          bottom: 0;
+          top: 10px;
+        }
+      }
+    } // end slider content
+    .slider-content-text {
+      display: flex;
+      flex-direction: column;
+      @include MQ(M) {
+        padding: 0 25px;
+      }
+    }
+  }
+} // end slider container
+
+.swiper-button-prev {
+  background-image: url(../img/arrow-prev.svg);
+}
+.swiper-button-next {
+  background-image: url(../img/arrow-next.svg);
+}

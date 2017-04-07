@@ -1,0 +1,15 @@
+@import 'bourbon'; // http://bourbon.io/
+
+// Partials - media queries, mixing, variables
+@import '../partials/variables'; // colors, fonts etc...
+@import '../partials/mixins'; // custom mixins
+@import '../partials/layout'; // responsive grid and media queries
+@import '../partials/fonts'; // fonts
+
+// Parts - basic style and page specific sheets
+@import '../parts/reset'; // reset layout
+@import '../parts/basic'; // basic layout
+@import '../parts/navigation'; // nav
+@import '../parts/swiper'; // swiper plugin css defaults
+@import '../parts/slider'; // my slider css classes
+@import '../parts/smile'; // smile specifics
