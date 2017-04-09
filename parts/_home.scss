@@ -1,0 +1,428 @@
+
+.opener-image {
+  height: 450px;
+  @include retina-image("../img/header_bg", auto 110%, jpg);
+  overflow: auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding: 0 15px;
+  @include MQ(M) {
+    height: 800px;
+    background-position: bottom;
+    @include retina-image("../img/header_bg", cover, jpg, "../img/header_bg_3x");
+  }
+  @include MQ(L) {
+    height: 800px;
+    background-position: center center;
+    @include retina-image("../img/header_bg", cover, jpg, "../img/header_bg_4x");
+  }
+}
+
+.opener-title {
+  margin-top: 145px;
+  padding-left: 15px;
+  @include MQ(M) {
+    padding-left: 85px;
+    margin-top: 245px;
+  }
+  @include MQ(L) {
+    padding-left: 125px;
+    margin-top: 245px;
+  }
+  h1 {
+    font-family: $primary-font;
+    color: $color-2;
+    font-size: 35px;
+    text-align: left;
+    margin-bottom: 10px;
+    @include MQ(M) {
+      font-size: 45px;
+    }
+  }
+  h2 {
+    font-family: $secondary-font;
+    color: $color-2;
+    font-size: 18px;
+    max-width: 180px;
+    @include MQ(M) {
+      max-width: none;
+    }
+  }
+}
+
+.why-container {
+// opening why box & content
+  overflow: visible;
+  position: relative;
+  top: -165px;
+  background: url(../img/curves-mobile.svg) no-repeat;
+  background-size: cover;
+  padding: 185px 25px 0 25px;
+  height: 500px;
+  margin: 0 auto;
+
+  @include MQ(SS) {
+    padding: 50% 25px 0 25px;
+    background: url(../img/curves-ss.svg) no-repeat;
+    background-size: 100%;
+    height: 100%;
+  }
+  @include MQ(M) {
+    background: url(../img/curves.svg) no-repeat;
+    padding: 115px 25px 0 75px;
+  }
+  @media (min-width: 1500px) {
+    background-size: 100%;
+  }
+  h5 {
+    margin-bottom: 20px;
+    max-width: 500px;
+    @include MQ(M) {
+      max-width: 800px;
+      margin-left: 0;
+    }
+    @include MQ(L) {
+      margin-left: 65px;
+    }
+  }
+  p {
+    text-align: left;
+    max-width: 500px;
+    line-height: 1.3;
+    @include MQ(M) {
+      max-width: 800px;
+      margin-left: 0;
+    }
+    @include MQ(L) {
+      max-width: 700px;
+      margin-left: 65px;
+    }
+  }
+}
+
+.points-box {
+  @include MQ(LS) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .point {
+    &:first-of-type {
+      margin-top: 65px;
+    }
+    @include MQ(M) {
+      max-width: 500px;
+      margin: 25px auto;
+    }
+    @include MQ(L) {
+      height: 305px;
+    }
+    .bullet {
+      background: $color-4;
+      color: $color-2;
+      font-family: $script-font;
+      font-size: 70px;
+      line-height: 0px;
+      position: relative;
+      border-radius: 100%;
+      padding: 18px 10px 10px 15px;
+      background-size: cover;
+      width: 42px;
+      height: 42px;
+    }
+    p {
+      color: lighten($color-1, 20%);
+      @include MQ(M) {
+        margin: 0 auto;
+      }
+    }
+  } // end .point
+}
+
+// point specific things
+#point_2 {
+  padding-top: 40px;
+  .bullet {
+    padding: 15px 0 0 0;
+  }
+}
+#point_3 {
+  .bullet {
+    padding: 15px 15px 0 5px;
+  }
+}
+#point_4 {
+  .bullet {
+    padding: 15px 10px 0 5px;
+    position: relative;
+    z-index: 5;
+    margin-top: 50px;
+    margin-bottom: -35px;
+    @include MQ(L) {
+      margin-top: 0;
+    }
+  }
+  img {
+    width: 25px;
+    transform: rotate(28deg);
+    position: relative;
+    z-index: 0;
+    top: -20px;
+    right: -20px;
+  }
+}
+
+.outer-container.grey .inner-container .ami-box {
+  display: flex;
+  flex-direction: column;
+  @include MQ(LS) {
+    flex-direction: row;
+  }
+  div {
+    @include MQ(M) {
+      margin: 0 auto;
+    }
+  }
+  h2 {
+    margin-top: 35px;
+    @include MQ(M) {
+      margin: 35px 0 0 0;
+    }
+  }
+  p {
+    color: lighten($color-1, 20%);
+    margin-bottom:20px;
+    @include MQ(M) {
+      margin-top: 15px;
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    @include MQ(LS) {
+      float: left;
+      order: -1;
+      margin-top: 65px;
+      margin-right: 45px;
+    }
+  }
+}
+
+// Tab styles
+.accordion-tabs {
+  @include clearfix;
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  .tab-header-and-content {
+    list-style: none;
+    display: inline;
+  }
+
+  .tab-link {
+    display: inline-block;
+    padding-right: 35px;
+    font-size: 25px;
+    font-family: $primary-font-bold;
+    opacity: .6;
+    transition: opacity $animation-duration-light ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+    @include MQ(SS) {
+      padding-right: 15px;
+    }
+    @include MQ(M) {
+      font-size: 35px;
+      padding-right: 45px;
+    }
+    .seperator {
+      display: none;
+      margin-top: 5px;
+      @include MQ(M) {
+        width: 65px;
+      }
+    }
+  }
+  #sub-tabs {
+    .tab-link {
+      font-size: 16px;
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      @include MQ(SS) {
+        font-size: 14px;
+      }
+      .seperator {
+        width: 35px;
+      }
+    }
+  }
+
+
+  .is-active {
+    opacity: 1;
+    .seperator {
+      display: block;
+    }
+  }
+
+  .tab-content {
+    display: none;
+    width: 100%;
+    float: left;
+    p {
+      color: lighten($color-1, 20%);
+    }
+  }
+}
+// Slider (mobile only - in sub-tab 1 & 2)
+.swiper-container {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 45px;
+    img {
+      width: 100%;
+    }
+}
+.grid {
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .mansory-wrapper {
+    column-count: 3;
+    column-gap: 3%;
+    column-width: 30%;
+    width: 100%;
+    margin: 0;
+  }
+  .right {
+    float: right;
+    display: inline-block;
+  }
+  #extras-grid {
+    .wrapper {
+      margin-right: 0;
+    }
+  }
+  #det-ad {
+    position: relative;
+    top: -100px;
+    left: -205px;
+  }
+  .swiper-slide {
+    max-width: 25%;
+    margin: 15px 40px 25px 0;
+    @include MQ(L) {
+      max-width: 240px;
+      margin-right: 20px;
+    }
+  }
+  .long-ad {
+    @include MQ(LS) {
+      width: 450px;
+      max-width: none;
+    }
+  }
+  img {
+    box-shadow: 0 20px 50px 0 rgba(0,0,0,0.15);
+    max-width: 100%;
+  }
+}
+.swiper-pagination {
+  @include MQ(LS) {
+    display: none;
+  }
+}
+
+.ami-note {
+  margin: 85px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  @include MQ(M) {
+    flex-direction: row;
+  }
+  img {
+    max-width: 100px;
+  }
+  div {
+    margin: 0 auto;
+    @include MQ(M) {
+      max-height: 125px;
+    }
+  }
+  .ami-bubble {
+    position: relative;
+    width: 130px;
+    height: 100px;
+    display: inline-block;
+    bottom: 105px;
+    background: url(../img/bubble.svg) no-repeat;
+    padding: 22px 24px 0 18px;
+    font-family: $secondary-font;
+    font-size: 16px;
+    @include MQ(M) {
+      bottom: 165px;
+      left: 100px;
+    }
+  }
+  p {
+    margin-top: -15px;
+    @include MQ(M) {
+      position: relative;
+      right: 85px;
+      top: 45px;
+    }
+  }
+}
+
+
+
+
+// Container specific edits
+#why {
+  margin-top: -180px;
+  @include MQ(SS) {
+    margin-top: -350px;
+  }
+  @include MQ(M) {
+    margin-top: -320px;
+  }
+}
+#fun {
+  padding-top: 25px;
+  padding-bottom: 45px;
+}
+#work {
+  .title-box {
+    margin-top: 45px;
+    margin-bottom: 85px;
+  }
+}
+#oregon {
+  margin-top: 45px;
+  padding-top: 25px;
+  padding-bottom: 45px;
+  .ami-box {
+    h2 {
+      max-width: none;
+      margin-top: 15px;
+    }
+    div {
+      margin-right: 45px;
+      @include MQ(LS) {
+        margin-left: 25px;
+      }
+    }
+    img {
+      max-width: 300px;
+      @include MQ(M) {
+        margin-left: 165px;
+      }
+    }
+  }
+}

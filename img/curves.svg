@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="318px" viewBox="0 0 1440 318" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43 (38999) - http://www.bohemiancoding.com/sketch -->
+    <title>Curves</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M214.02056,469.061254 C214.02056,469.061254 557.513311,530.265844 910.370912,424.065889 C1234.45005,326.527419 1700.02056,469.061254 1700.02056,469.061254 L1746.73246,502.140656 C1746.73246,502.140656 1634.65398,677.804372 1233.22497,645.410159 C831.795966,613.015947 586.340755,573.569185 222.265005,630.361833 C-141.810745,687.154482 214.02056,469.061254 214.02056,469.061254 Z" id="path-1"></path>
+        <filter x="-2.5%" y="-20.2%" width="105.0%" height="132.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy" transform="translate(0.000000, -637.000000)">
+            <g id="Curves" transform="translate(-128.000000, 291.000000)">
+                <g id="Black-Curves">
+                    <path d="M27.1553758,608.403986 C27.1553758,608.403986 229.120088,751.649382 707.895773,614.362663 C905.177971,557.792903 998.864184,457.702108 1221.3421,384.885491 C1443.82002,312.068874 2328.91597,307.224654 2328.91597,307.224654 L150.726145,823.558499 L27.1553758,608.403986 Z" id="Rectangle-5-Copy-4" fill="#1C1C1C" transform="translate(1178.035674, 565.391576) rotate(16.000000) translate(-1178.035674, -565.391576) "></path>
+                    <path d="M105,469.061254 C105,469.061254 448.492751,530.265844 801.350351,424.065889 C1125.42949,326.527419 1591,469.061254 1591,469.061254 L1584.94589,540.733973 L112.602038,592.21348 L105,469.061254 Z" id="Rectangle-5-Copy" fill="#1C1C1C" transform="translate(848.000000, 491.075203) scale(-1, 1) translate(-848.000000, -491.075203) "></path>
+                    <path d="M118,477.753043 C118,477.753043 337.557416,462.7505 814.350351,432.757678 C1291.14329,402.764857 1604,477.753043 1604,477.753043 L1595.99011,583.833207 L115.309449,532.667658 L118,477.753043 Z" id="Rectangle-5" fill="#1C1C1C" opacity="0.77681903"></path>
+                    <g id="Rectangle-5-Copy-2" transform="translate(902.510280, 519.666892) scale(-1, 1) translate(-902.510280, -519.666892) ">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#1C1C1C" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

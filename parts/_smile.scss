@@ -6,7 +6,7 @@
     }
   }
 
-  .header-text {
+  .title-text {
     display: block;
     margin: 0 auto;
     padding-top: 70px;
@@ -29,8 +29,8 @@
       @include MQ(L) {
         font-size: 150px;
       }
-      &.swatch {
-        font-family: $swatch;
+      &.swash {
+        font-family: $swash;
         font-size: 320px;
         position: relative;
         color: $color-3;
@@ -75,7 +75,7 @@
   @media only screen and (max-width: 350px) {
     h1 {
       font-size: 70px;
-      &.swatch {
+      &.swash {
         font-size: 200px;
         left: -60px;
         top: -40px;
@@ -221,7 +221,7 @@
     transform: rotate(350deg) scaleX(-1);
     margin-top: -55px;
     h1 {
-      font-family: $swatch;
+      font-family: $swash;
       font-size: 500px;
       line-height: 100px;
       text-align: left;

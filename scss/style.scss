@@ -1,4 +1,5 @@
 @import 'bourbon'; // http://bourbon.io/
+@import 'neat'; // http://neat.bourbon.io/
 
 // Partials - media queries, mixing, variables
 @import '../partials/variables'; // colors, fonts etc...
@@ -12,4 +13,8 @@
 @import '../parts/navigation'; // nav
 @import '../parts/swiper'; // swiper plugin css defaults
 @import '../parts/slider'; // my slider css classes
+@import '../parts/zoom'; // zoom.js by fat styles
+
+// Pages - the parts specific to pages
 @import '../parts/smile'; // smile specifics
+@import '../parts/home'; // home specifics
