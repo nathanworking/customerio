@@ -15,7 +15,7 @@
     }
     h1 {
       font-size: 110px;
-      color: $color-2;
+      color: $color-1;
       z-index: 5;
       line-height: 80px;
       position: relative;
@@ -89,15 +89,15 @@
   h4 {
     font-size: 25px;
     line-height: 1.3;
-    color: darken($color-2, 30%);
+    color: darken($color-1, 30%);
     @include MQ(LS) {
       font-size: 35px;
     }
     a {
-      color: darken($color-2, 30%);
+      color: darken($color-1, 30%);
       transition: all $animation-duration-light ease-out;
       &:hover {
-        color: $color-2;
+        color: $color-1;
       }
       &:after {
         content: '';
@@ -138,6 +138,7 @@
     text-align: center;
     width: 100%;
     margin: 25px auto;
+    color: $color-1;
   }
   img {
     width: 100%;
@@ -201,7 +202,7 @@
       line-height: 1.3;
       transition: color $animation-duration-light ease-in-out;
       &:hover {
-        color: $color-2;
+        color: $color-1;
       }
       @include MQ(L) {
         font-size: 35px;

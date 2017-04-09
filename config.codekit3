@@ -101,6 +101,16 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/img\/ami-hoodie.png": {
+		"ft": 32768,
+		"iS": 24205,
+		"l": 1,
+		"oA": 0,
+		"oAP": "\/img\/ami-hoodie.png",
+		"oF": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/img\/ami-lumberjack.png": {
 		"ft": 32768,
 		"iS": 109589,
@@ -141,6 +151,24 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
+	"\/img\/astro-first.jpg": {
+		"ft": 16384,
+		"iS": 402936,
+		"oA": 0,
+		"oAP": "\/img\/astro-first.jpg",
+		"oF": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/img\/astro-recent.jpg": {
+		"ft": 16384,
+		"iS": 402936,
+		"oA": 0,
+		"oAP": "\/img\/astro-recent.jpg",
+		"oF": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"\/img\/bolts-report.png": {
 		"ft": 32768,
 		"iS": 359669,
@@ -150,6 +178,16 @@
 		"oF": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/img\/bubble-right.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/bubble-right.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/img\/bubble.svg": {
 		"ft": 2097152,
@@ -277,8 +315,8 @@
 		"oA": 0,
 		"oAP": "\/img\/header_bg.jpg",
 		"oF": 0,
-		"opt": 0,
-		"q": 100
+		"opt": 1,
+		"q": 70
 		},
 	"\/img\/header_bg_2x.jpg": {
 		"ft": 16384,
@@ -286,8 +324,8 @@
 		"oA": 0,
 		"oAP": "\/img\/header_bg_2x.jpg",
 		"oF": 0,
-		"opt": 0,
-		"q": 100
+		"opt": 1,
+		"q": 70
 		},
 	"\/img\/header_bg_3x.jpg": {
 		"ft": 16384,
@@ -295,8 +333,8 @@
 		"oA": 0,
 		"oAP": "\/img\/header_bg_3x.jpg",
 		"oF": 0,
-		"opt": 0,
-		"q": 100
+		"opt": 1,
+		"q": 70
 		},
 	"\/img\/header_bg_4x.jpg": {
 		"ft": 16384,
@@ -304,8 +342,8 @@
 		"oA": 0,
 		"oAP": "\/img\/header_bg_4x.jpg",
 		"oF": 0,
-		"opt": 0,
-		"q": 100
+		"opt": 1,
+		"q": 70
 		},
 	"\/img\/instagram.svg": {
 		"ft": 2097152,
@@ -325,6 +363,16 @@
 		"oF": 0,
 		"opt": 0,
 		"q": 100
+		},
+	"\/img\/link.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/img\/link.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
 		},
 	"\/img\/mail.svg": {
 		"ft": 2097152,

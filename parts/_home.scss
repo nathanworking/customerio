@@ -105,6 +105,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-bottom: 35px;
   }
   .point {
     &:first-of-type {
@@ -180,7 +181,12 @@
   }
   div {
     @include MQ(M) {
+      margin: 0 auto 15px auto;
+      max-width: 500px;
+    }
+    @include MQ(LS) {
       margin: 0 auto;
+      max-width: none;
     }
   }
   h2 {
@@ -202,7 +208,6 @@
     height: 100%;
     margin: 0 auto;
     @include MQ(LS) {
-      float: left;
       order: -1;
       margin-top: 65px;
       margin-right: 45px;
@@ -277,7 +282,13 @@
     p {
       color: lighten($color-1, 20%);
     }
-  }
+    h5 {
+      color: $color-1;
+      .seperator {
+        margin-top: 5px;
+      }
+    }
+  } // end tab-content
 }
 // Slider (mobile only - in sub-tab 1 & 2)
 .swiper-container {
@@ -345,6 +356,8 @@
   flex-direction: column;
   @include MQ(M) {
     flex-direction: row;
+    max-width: 700px;
+    margin-left: 0;
   }
   img {
     max-width: 100px;
@@ -377,6 +390,11 @@
       right: 85px;
       top: 45px;
     }
+    @include MQ(L) {
+      position: relative;
+      right: 50px;
+      top: 35px;
+    }
   }
 }
 
@@ -396,6 +414,12 @@
 #fun {
   padding-top: 25px;
   padding-bottom: 45px;
+  .swash {
+    font-size: 355px;
+    @include MQ(M) {
+      font-size: 450px;
+    }
+  }
 }
 #work {
   .title-box {
@@ -404,25 +428,143 @@
   }
 }
 #oregon {
-  margin-top: 45px;
   padding-top: 25px;
   padding-bottom: 45px;
+  @include MQ(M) {
+    margin-top: 45px;
+  }
+  .swash {
+    font-size: 425px;
+    transform: rotate(4deg);
+    @include MQ(M) {
+      font-size: 520px;
+    }
+  }
   .ami-box {
     h2 {
       max-width: none;
-      margin-top: 15px;
+      margin-top: 45px;
     }
     div {
-      margin-right: 45px;
       @include MQ(LS) {
-        margin-left: 25px;
+        margin: 0 auto 0 0;
+        max-width: 600px;
       }
     }
     img {
       max-width: 300px;
-      @include MQ(M) {
-        margin-left: 165px;
+      margin-top: 65px;
+    }
+  }
+}
+
+#extras  {
+// div in "build" tab
+  margin-top: 35px;
+  p {
+    max-width: 520px;
+  }
+  .ami-note {
+    max-width: 750px;
+
+    svg {
+      display: none;
+      @include MQ(LS) {
+        display: inline;
+        position: relative;
+        right: 60px;
+        top: 70px;
       }
+    }
+    div {
+      @include MQ(M) {
+        margin-left: 0;
+      }
+    }
+    .button {
+      @include MQ(M) {
+        bottom: 55px;
+        left: 155px;
+      }
+    }
+    .ami-bubble {
+      bottom: 105px;
+      left: 10px;
+    }
+    .right {
+      margin-top: -10px;
+      .ami-bubble {
+        background: url(../img/bubble-right.svg) no-repeat;
+        left: 20px;
+      }
+      .button {
+        bottom: 105px;
+      	left: -15px;
+        display: inline-flex;
+        @include MQ(M) {
+          bottom: 55px;
+          left: -35px;
+        }
+      }
+    } // end right
+  }
+} // end #extras
+
+#photography {
+  margin-top: 35px;
+  p {
+    margin-bottom: 0;
+    &:last-of-type {
+      margin-bottom: 15px;
+    }
+  }
+  .astro {
+    display: flex;
+    flex-direction: column;
+    margin-top: 35px;
+    @include MQ(M) {
+      flex-direction: row;
+    }
+    img {
+      width: 100%;
+      max-width: 300px;
+    }
+    div {
+      @include MQ(M) {
+        margin-right: 10%;
+      }
+    }
+  }
+}
+
+#note {
+  margin-top: 35px;
+  padding-top: 25px;
+  h2 {
+    text-align: center;
+    margin: 65px auto 20px auto;
+    @include MQ(M) {
+      margin: 65px auto 0 auto;
+    }
+  }
+  p {
+    text-align: center;
+    width: 100%;
+    max-width: none;
+    color: lighten($color-1, 25%);
+    margin-bottom: 0;
+  }
+  a {
+    color: lighten($color-1, 25%);
+  }
+  h5 {
+    text-align: center;
+    width: 100px;
+    margin: 0 auto;
+    color: $color-1;
+    margin-top: 35px;
+    .seperator {
+      margin-left: 30px;
     }
   }
 }

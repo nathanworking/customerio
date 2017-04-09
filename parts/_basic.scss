@@ -83,15 +83,6 @@ main {
 		font-family: $secondary-font;
 		text-transform: uppercase;
 		letter-spacing: 2px;
-		&:after {
-			position: absolute;
-			content: '';
-			width: 45px;
-			height: 1px;
-			margin-top: 25px;
-			margin-left: -45px;
-			background: $color-4;
-		}
 	}
 
 	p {
@@ -101,6 +92,66 @@ main {
 		margin: 0 auto;
 		font-size: 18px;
 		line-height: 1.4;
+	}
+
+	.list {
+		li {
+			font-family: $secondary-font;
+			font-size: 18px;
+			padding: 10px 0;
+			a {
+				border-bottom: 1px solid lighten($color-1, 60%);
+				height: 22px;
+				padding-bottom: 3px;
+				opacity: .8;
+				transition: all $animation-duration-light ease-out;
+				&:hover {
+					opacity: 1;
+					border-bottom-color: $color-3;
+				}
+			}
+		}
+	} // end list
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	@include MQ(M) {
+		flex-direction: row;
+	}
+	div {
+		margin-top: 35px;
+		&:first-of-type {
+			margin-top: 0;
+		}
+		@include MQ(M) {
+			margin-top: 0;
+			margin-right: 10%;
+		}
+	}
+}
+
+.button {
+	border-radius: 2px;
+	padding: 13px 15px;
+	text-transform: capitalize;
+	color: $color-2;
+	font-family: $secondary-font;
+	font-size: 16px;
+	display: inline;
+	position: relative;
+	bottom: 95px;
+	left: 125px;
+	transition: opacity .2s ease-out;
+	&:hover {
+		opacity: .8;
+	}
+	&.red {
+		background: $color-4;
+	}
+	&.blue {
+		background: $color-3;
 	}
 }
 
@@ -119,10 +170,7 @@ main {
 		}
 	}
 	@include MQ(M) {
-		margin-top: 85px;
-	}
-	@include MQ(LS) {
-		margin-top: 125px;
+		margin-top: 65px;
 	}
 	span {
 		color: $color-2;
@@ -230,19 +278,25 @@ main {
 	    text-align: left;
 	    line-height: 1.3;
 	    margin-bottom: 20px;
+			@include MQ(M) {
+				max-width: 500px;
+				margin: 0;
+				margin-bottom: 45px;
+			}
+			@include MQ(L) {
+				max-width: 650px;
+				font-size: 22px;
+				margin-top: 15px;
+			}
 			&:last-of-type {
 				margin-bottom: 30px;
 			}
-	    @include MQ(M) {
-	      max-width: 500px;
-	      margin: 0;
-	      margin-bottom: 45px;
-	    }
-	    @include MQ(L) {
-	      max-width: 650px;
-	      font-size: 22px;
-				margin-top: 15px;
-	    }
+			a {
+				transition: all $animation-duration-light ease-in-out;
+				&:hover {
+					opacity: .6;
+				}
+			}
 	  }
 		.title-box {
 		// script titles
@@ -305,4 +359,47 @@ main {
 		position: relative;
 		z-index: 500;
 	}
+}
+
+.social-block {
+	display: flex;
+  width: 100%;
+  margin: 15px auto 0 auto;
+  position: relative;
+  justify-content: center;
+  padding-left: 25px;
+  a {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    &:hover {
+      .social-icon {
+        opacity: .8;
+      }
+    }
+    svg {
+      margin: 15px 5px 0 5px;
+      width: 50px;
+      max-height: 55px;
+    }
+  }
+  .social-icon {
+    fill: lighten($color-1, 20%);
+    transition: opacity $animation-duration-light ease-in-out;
+  }
+    #medium-icon {
+    svg {
+      width: 56px;
+      @include MQ(SS) {
+        width: 57px;
+      }
+    }
+    .social-icon {
+      background: rgba($color-2, .6);
+    }
+  }
+}
+
+.center {
+	margin: 0 auto;
 }
