@@ -210,6 +210,12 @@ main {
 		font-family: $script-font;
 		text-transform: capitalize;
 	}
+	span {
+		display: none;
+		@include MQ(M) {
+			display: inline;
+		}
+	}
 }
 .page-top-text-right {
 	position: fixed;

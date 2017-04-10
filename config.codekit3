@@ -158,7 +158,7 @@
 		"oAP": "\/img\/astro-first.jpg",
 		"oF": 0,
 		"opt": 1,
-		"q": 100
+		"q": 65
 		},
 	"\/img\/astro-recent.jpg": {
 		"ft": 16384,
@@ -167,7 +167,7 @@
 		"oAP": "\/img\/astro-recent.jpg",
 		"oF": 0,
 		"opt": 1,
-		"q": 100
+		"q": 70
 		},
 	"\/img\/bolts-report.png": {
 		"ft": 32768,
@@ -206,7 +206,7 @@
 		"oA": 0,
 		"oAP": "\/img\/cbc-site-1.png",
 		"oF": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/img\/cbc-site-2.png": {
@@ -216,7 +216,7 @@
 		"oA": 0,
 		"oAP": "\/img\/cbc-site-2.png",
 		"oF": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/img\/cd-circle.svg": {
@@ -432,6 +432,16 @@
 		"oAP": "\/img\/photos-email.png",
 		"oF": 1,
 		"opt": 1,
+		"q": 100
+		},
+	"\/img\/sm_default.png": {
+		"ft": 32768,
+		"iS": 5984531,
+		"l": 1,
+		"oA": 0,
+		"oAP": "\/img\/sm_default.png",
+		"oF": 0,
+		"opt": 0,
 		"q": 100
 		},
 	"\/img\/twitter.svg": {
